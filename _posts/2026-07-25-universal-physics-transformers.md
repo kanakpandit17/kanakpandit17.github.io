@@ -454,7 +454,7 @@ At its core UPT is one idea: the cost of a neural operator should not grow just 
 
 Three pieces make that work. A hierarchical encoder that compresses large meshes through supernodes and message passing, a query-based decoder that can be evaluated on discretizations the model never trained on, and the two inverse losses that keep the latent state stable enough for long latent rollouts. Without touching the network, the same framework covers steady-state surface flows, transient CFD and Lagrangian particle dynamics, at up to **400×** the throughput of the reference solver.
 
-The open problems from the previous section are real, and conservation in particular seems like the thing to fix next. Even so, the paper makes a convincing case for its central claim: computational cost does not have to scale with the size of the discretization.
+None of that makes the limitations go away. I would still want to see what happens to a 512-token latent state in properly turbulent flow, and I think enforcing conservation is the obvious next thing to fix. But the central claim holds up: computational cost does not have to scale with the size of the discretization, and once you stop assuming it does, a lot of the memory ceiling that has been holding these models back simply isn't there any more.
 
 ### Key takeaways
 {:.no_toc}
